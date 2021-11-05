@@ -1,0 +1,47 @@
+enum MessageStatus {
+  SENT
+  DELIVERED
+  READ
+}
+
+type Message @model @key(name: "byUser", fields: ["userID"]) @key(name: "byChatRoom", fields: ["chatroomID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String
+  userID: ID
+  chatroomID: ID
+  image: String
+  audio: String
+  video: String
+  status: MessageStatus
+  replyToMessageID: ID
+}
+
+type ChatRoom @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  newMessages: Int
+  LastMessage: Message @connection
+  Messages: [Message] @connection(keyName: "byChatRoom", fields: ["id"])
+  ChatRoomUsers: [ChatRoomUser] @connection(keyName: "byChatRoom", fields: ["id"])
+  Admin: User @connection
+  name: String
+  imageUri: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  imageUri: String
+  status: String
+  Messages: [Message] @connection(keyName: "byUser", fields: ["id"])
+  ChatRooms: [ChatRoomUser] @connection(keyName: "byUser", fields: ["id"])
+  lastOnlineAt: AWSTimestamp
+}
+
+type ChatRoomUser @model(queries: null) @key(name: "byUser", fields: ["userID", "chatroomID"]) @key(name: "byChatRoom", fields: ["chatroomID", "userID"]) @auth(rules: [{allow: public}, {allow: public}]) {
+  id: ID!
+  userID: ID!
+  chatroomID: ID!
+  user: User! @connection(fields: ["userID"])
+  chatroom: ChatRoom! @connection(fields: ["chatroomID"])
+}
+ 

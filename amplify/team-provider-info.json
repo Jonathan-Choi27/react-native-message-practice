@@ -1,0 +1,27 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactnativemessagepr-staging-40825-authRole",
+      "UnauthRoleArn": "arn:aws:iam::666932553005:role/amplify-reactnativemessagepr-staging-40825-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::666932553005:role/amplify-reactnativemessagepr-staging-40825-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-reactnativemessagepr-staging-40825-deployment",
+      "UnauthRoleName": "amplify-reactnativemessagepr-staging-40825-unauthRole",
+      "StackName": "amplify-reactnativemessagepr-staging-40825",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:666932553005:stack/amplify-reactnativemessagepr-staging-40825/b4962720-32ed-11ec-91be-06a04cedaf1e",
+      "AmplifyAppId": "d2kdbjhtu6gm8s",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-reactnativemessagepr-staging-40825-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "ReactNativeMessagePractice": {}
+      },
+      "function": {
+        "ReactNativeMessagePracticePostConfirmation": {
+          "deploymentBucketName": "amplify-reactnativemessagepr-staging-40825-deployment",
+          "s3Key": "amplify-builds/ReactNativeMessagePracticePostConfirmation-575048647071644a7738-build.zip"
+        }
+      }
+    }
+  }
+}
