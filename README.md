@@ -14,7 +14,7 @@
 
 ## About The Project
 
-The goal of this project is to develop a mobile application something remotely similar to Signal. The app is able to send messages, reply to messages, send images/audio, real-time observes.
+The goal of this project is to develop a mobile application something remotely similar to Signal. The app is able to send messages, reply to messages, send images/audio in real time.
 
 ## 📝 Usage
 
